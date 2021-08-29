@@ -1,0 +1,25 @@
+{
+  "name": "create-astro-component",
+  "version": "0.0.1",
+  "description": "npm initializer to quickly create a repo for an Astro component.",
+  "main": "src/create-astro-component.js",
+  "files": [
+    "src"
+  ],
+  "bin": {
+    "create-astro-component": "./src/create-astro-component.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonasmerlin/create-astro-component.git"
+  },
+  "keywords": [
+    "astro"
+  ],
+  "author": "Jonas Schumacher",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonasmerlin/create-astro-component/issues"
+  },
+  "homepage": "https://github.com/jonasmerlin/create-astro-component#readme"
+}

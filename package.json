@@ -21,5 +21,19 @@
   "bugs": {
     "url": "https://github.com/jonasmerlin/create-astro-component/issues"
   },
-  "homepage": "https://github.com/jonasmerlin/create-astro-component#readme"
+  "homepage": "https://github.com/jonasmerlin/create-astro-component#readme",
+  "devDependencies": {
+    "@types/degit": "^2.8.3",
+    "@types/node": "^16.10.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "start": "ts-node src/create-astro-component.ts"
+  },
+  "dependencies": {
+    "@types/yargs": "^17.0.3",
+    "degit": "^2.8.4",
+    "yargs": "^17.2.1"
+  }
 }

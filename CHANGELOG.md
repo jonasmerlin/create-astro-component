@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/jonasmerlin/create-astro-component/compare/v0.0.5...v0.0.6) (2021-09-27)
+
+
+### Features
+
+* support project names with dashes ([c28e9b0](https://github.com/jonasmerlin/create-astro-component/commit/c28e9b017de2ee975391bc129446e74a1d8b6515))
+
 ### [0.0.5](https://github.com/jonasmerlin/create-astro-component/compare/v0.0.4...v0.0.5) (2021-09-27)
 
 

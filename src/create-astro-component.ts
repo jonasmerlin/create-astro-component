@@ -70,7 +70,7 @@ async function run() {
       process.cwd(),
       "packages/new-package/",
       projectName
-        .split(" ")
+        .split(/\s|\-/)
         .map((word) => [word.charAt(0).toUpperCase(), ...word.slice(1)].join(""))
 				.concat(".astro")
         .join("")

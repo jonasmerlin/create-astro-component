@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 
 import fs from "fs";
+import path from "path";
 import util from "util";
 import degit from "degit";
 
@@ -44,11 +45,48 @@ async function run() {
     verbose: true,
   });
 
-	try {
-		await emitter.clone(process.cwd());
-	} catch (err) {
-		console.error(err);
-	}
+  try {
+    await emitter.clone(process.cwd());
+
+    const packageJSONPath = path.join(
+      process.cwd(),
+      "packages/new-package/package.json"
+    );
+    const packageJSON = JSON.parse(fs.readFileSync(packageJSONPath, "utf8"));
+
+    const normalizedProjectName = projectName.toLowerCase().replace(" ", "-");
+    packageJSON.name = normalizedProjectName;
+
+    fs.writeFileSync(
+      packageJSONPath,
+      JSON.stringify(packageJSON, undefined, 2)
+    );
+
+    const oldComponentPath = path.join(
+      process.cwd(),
+      "packages/new-package/NewPackage.astro"
+    );
+    const newComponentPath = path.join(
+      process.cwd(),
+      "packages/new-package/",
+      projectName
+        .split(" ")
+        .map((word) => [word.charAt(0).toUpperCase(), ...word.slice(1)].join(""))
+				.concat(".astro")
+        .join("")
+    );
+    fs.renameSync(oldComponentPath, newComponentPath);
+
+    const oldPackagePath = path.join(process.cwd(), "packages/new-package");
+    const newPackagePath = path.join(
+      process.cwd(),
+      "packages/",
+      normalizedProjectName
+    );
+    fs.renameSync(oldPackagePath, newPackagePath);
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 run();
